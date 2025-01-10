@@ -7,20 +7,17 @@ The Financial Data App is a web application built with React (JavaScript) that f
 **Steps to Run the Project Locally**
 
 1. Clone the repository:
-   ```bash
 git clone https://github.com/swethamo/Financial-Data-App.git
 
 2. Navigate into the project directory:
-```bash
-  cd financial-data-app
-
+cd financial-data-app
 
 3. Install the dependencies
-   npm install
+npm install
 
 4. Start the development server:
-   npm start
+npm start
 
-Open the app in your browser at http://localhost:3000.
+Open the website in your browser at http://localhost:3000.
 
 The website is deployed on Netlify: https://mellifluous-pegasus-5aa47e.netlify.app/
