@@ -1,0 +1,44 @@
+/* Outer container */
+.header-container {
+    display: flex;
+    align-items: center; /* Vertically align logo and title */
+    justify-content: center; /* Center content */
+    width: 100%; /* Stretch container across the page */
+    position: relative;
+    padding: 10px; /* Add padding for better spacing */
+}
+
+/* Logo styling */
+.header-logo {
+    width: 150px; /* Adjust logo size for better responsiveness */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add spacing between logo and title */
+}
+
+/* Title styling */
+.header-title {
+    
+    font-size: 32px; /* Adjust font size for mobile */
+    margin: 20px; /* Remove default margin */
+    text-align: left; /* Align text next to the logo */
+    font-weight: 600; /* Apply the 'font-semibold' class */
+    flex: 1; /* Allow title to occupy remaining space */
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Stack logo and title */
+        align-items: center; /* Center-align content */
+    }
+
+    .header-logo {
+        margin-right: 0; /* Remove spacing as items are stacked */
+        margin-bottom: 10px; /* Add spacing below the logo */
+    }
+
+    .header-title {
+        text-align: center; /* Center-align title in stacked view */
+        font-size: 20px; /* Adjust title font size for smaller screens */
+    }
+}
