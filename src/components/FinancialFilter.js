@@ -6,16 +6,6 @@ function FinancialFilter({ onFilter }) {
   const [revenueRange, setRevenueRange] = useState([0, 400000000000]);
   const [netIncomeRange, setNetIncomeRange] = useState([0, 100000000000]);
 
-  const handleRangeChange = (range, setRange) => (e, newValue) => {
-    if (newValue[0] <= newValue[1]) {
-      setRange(newValue);
-    } else {
-      // Ensure min stays less than or equal to max
-      setRange([Math.min(newValue[0], newValue[1]), Math.max(newValue[0], newValue[1])]);
-    }
-  };
-
-
   const handleFilterChange = () => {
     onFilter({
       dateRange: { start: dateRange[0], end: dateRange[1] },
