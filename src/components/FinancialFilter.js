@@ -9,7 +9,8 @@ function FinancialFilter({ onFilter }) {
   const [dateRange, setDateRange] = useState([1990, 2025]);
   const [revenueRange, setRevenueRange] = useState([0, 400000000000]);
   const [netIncomeRange, setNetIncomeRange] = useState([0, 100000000000]);
-
+  
+  // Display table with filtered data
   const handleFilterChange = () => {
     onFilter({
       dateRange: { start: dateRange[0], end: dateRange[1] },
@@ -18,6 +19,7 @@ function FinancialFilter({ onFilter }) {
     });
   };
 
+  // Reset filters to default settings
   const handleResetFilters = () => {
     setDateRange(defaultDateRange);
     setRevenueRange(defaultRevenueRange);
