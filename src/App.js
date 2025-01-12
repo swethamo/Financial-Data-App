@@ -69,17 +69,26 @@ const App = () => {
         return direction === "ascending" ? a[key] - b[key] : b[key] - a[key];
       }
     });
-  
+
     setFilteredData(sortedData);
     setSortConfig({ key, direction });
   };
-  
+
   return (
     <div className="container mx-auto p-4">
       <Header />
 
       {/* Flexbox layout for table and filters */}
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+          gap: "20px",
+        }}
+      >
+        {" "}
         <div style={{ flex: 1 }}>
           <FinancialTable
             data={filteredData}
@@ -88,7 +97,6 @@ const App = () => {
             onSort={handleSort}
           />
         </div>
-
         <div style={{ width: "250px", marginLeft: "20px" }}>
           <FinancialFilter onFilter={applyFilters} />
         </div>

@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Slider, Typography, Button } from "@mui/material";
 
 function FinancialFilter({ onFilter }) {
+  const defaultDateRange = [1990, 2025];
+  const defaultRevenueRange = [0, 400000000000];
+  const defaultNetIncomeRange = [0, 100000000000];
+
   const [dateRange, setDateRange] = useState([1990, 2025]);
   const [revenueRange, setRevenueRange] = useState([0, 400000000000]);
   const [netIncomeRange, setNetIncomeRange] = useState([0, 100000000000]);
@@ -11,6 +15,23 @@ function FinancialFilter({ onFilter }) {
       dateRange: { start: dateRange[0], end: dateRange[1] },
       revenueRange: { min: revenueRange[0], max: revenueRange[1] },
       netIncomeRange: { min: netIncomeRange[0], max: netIncomeRange[1] },
+    });
+  };
+
+  const handleResetFilters = () => {
+    setDateRange(defaultDateRange);
+    setRevenueRange(defaultRevenueRange);
+    setNetIncomeRange(defaultNetIncomeRange);
+    onFilter({
+      dateRange: { start: defaultDateRange[0], end: defaultDateRange[1] },
+      revenueRange: {
+        min: defaultRevenueRange[0],
+        max: defaultRevenueRange[1],
+      },
+      netIncomeRange: {
+        min: defaultNetIncomeRange[0],
+        max: defaultNetIncomeRange[1],
+      },
     });
   };
 
@@ -28,9 +49,12 @@ function FinancialFilter({ onFilter }) {
         flexDirection: "column",
       }}
     >
- 
       {/* Date Range Filter */}
-      <Typography variant="subtitle1" gutterBottom style={{ marginTop: "15px" }}>
+      <Typography
+        variant="subtitle1"
+        gutterBottom
+        style={{ marginTop: "15px" }}
+      >
         Date Range (Years)
       </Typography>
       <Slider
@@ -44,7 +68,11 @@ function FinancialFilter({ onFilter }) {
       />
 
       {/* Revenue Range Filter */}
-      <Typography variant="subtitle1" gutterBottom style={{ marginTop: "15px" }}>
+      <Typography
+        variant="subtitle1"
+        gutterBottom
+        style={{ marginTop: "15px" }}
+      >
         Revenue Range
       </Typography>
       <Slider
@@ -58,7 +86,11 @@ function FinancialFilter({ onFilter }) {
       />
 
       {/* Net Income Range Filter */}
-      <Typography variant="subtitle1" gutterBottom style={{ marginTop: "15px" }}>
+      <Typography
+        variant="subtitle1"
+        gutterBottom
+        style={{ marginTop: "15px" }}
+      >
         Net Income Range
       </Typography>
       <Slider
@@ -70,24 +102,39 @@ function FinancialFilter({ onFilter }) {
         step={10000}
         style={{ color: "#162055" }}
       />
-
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={handleFilterChange}
+      <div
         style={{
+          display: "flex",
+          justifyContent: "space-between",
           marginTop: "20px",
-          backgroundColor: "#162055",
-          padding: "10px 20px",
-          fontSize: "14px",
-          maxWidth: '160px',
-          alignSelf: 'flex-end', // Align to the right
-
-
         }}
       >
-        Apply Filters
-      </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleResetFilters}
+          style={{
+            padding: "10px 10px",
+            fontSize: "10px",
+            backgroundColor: "#162055",
+          }}
+        >
+          Reset Filters
+        </Button>
+
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleFilterChange}
+          style={{
+            backgroundColor: "#162055",
+            padding: "10px 10px",
+            fontSize: "10px",
+          }}
+        >
+          Apply Filters
+        </Button>
+      </div>
     </div>
   );
 }

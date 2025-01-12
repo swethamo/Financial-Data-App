@@ -2,7 +2,10 @@ import React from "react";
 
 function FinancialTable({ data, onSort, sortField, sortDirection }) {
   const handleSort = (field) => {
-    const direction = sortField === field && sortDirection === "ascending" ? "descending" : "ascending";
+    const direction =
+      sortField === field && sortDirection === "ascending"
+        ? "descending"
+        : "ascending";
     onSort(field, direction);
   };
 
@@ -22,9 +25,7 @@ function FinancialTable({ data, onSort, sortField, sortDirection }) {
     <table className="financial-table">
       <thead>
         <tr>
-          <th onClick={() => handleSort("date")}>
-            Date {getArrow("date")}
-          </th>
+          <th onClick={() => handleSort("date")}>Date {getArrow("date")}</th>
           <th onClick={() => handleSort("revenue")}>
             Revenue {getArrow("revenue")}
           </th>
