@@ -19,7 +19,7 @@ const App = () => {
       );
       const result = await response.json();
 
-      // Map and format the data (if needed)
+      // Map the data 
       const formattedData = result.map((item) => ({
         date: item.date,
         revenue: item.revenue,
@@ -58,7 +58,7 @@ const App = () => {
     setFilteredData(filtered);
   };
 
-  // Handle sorting of data (for date, revenue, netIncome only)
+  // Sorting function
   const handleSort = (key, direction) => {
     const sortedData = [...filteredData].sort((a, b) => {
       if (key === "date") {
