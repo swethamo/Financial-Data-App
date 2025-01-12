@@ -20,4 +20,4 @@ npm start
 
 5. Open the website in your browser at http://localhost:3000.
 
-The website is also deployed on Netlify: https://mellifluous-pegasus-5aa47e.netlify.app/
+Deployed website: https://mellifluous-pegasus-5aa47e.netlify.app/
