@@ -1,23 +1,23 @@
-**Financial Data App**
+# Financial Data App
 
-**Overview**
+A responsive React application for exploring Apple's annual financial statements.
 
-The Financial Data App is a web application built with React (JavaScript) that fetches financial data from an API and displays it in a table format. The app includes features for displaying, filtering and sorting the data. The information in the table can be filtered by date range, revenue, and net income using the sliders. It can be sorted by clicking the headers (date, revenue and net income) in the table. The website is also mobile-friendly, (the heading and filtering component shift to the next line when the screen size is reduced). 
+## How It Works
 
-**Steps to Run the Project Locally**
+1. Fetch annual income statements from the Financial Modeling Prep API.
+2. Display revenue, net income, gross profit, EPS, and operating income in a table.
+3. Filter records by year, revenue, and net income.
+4. Sort records by date or financial values.
 
-1. Clone the repository:
-git clone https://github.com/swethamo/Financial-Data-App.git
+React manages the data, filters, and sorting state, while the layout adapts to smaller screens.
 
-2. Navigate into the project directory:
-cd financial-data-app
+## Technologies
 
-3. Install the dependencies:
-npm install
+React · JavaScript · Tailwind CSS · Financial Modeling Prep API
 
-4. Start the development server:
-npm start
+## Run Locally
 
-5. Open the website in your browser at http://localhost:3000.
-
-Deployed website: https://mellifluous-pegasus-5aa47e.netlify.app/
+- Run `npm install`.
+- Configure a valid Financial Modeling Prep API key in the API request.
+- Run `npm start`.
+- Open `http://localhost:3000`.
